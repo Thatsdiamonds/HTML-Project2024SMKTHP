@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Card dengan Scroll Snap</title>
+  <style>
+    .slider-container {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-snap-type: x mandatory;
+    }
+    .slider-card {
+      display: inline-block;
+      padding: 4vh;
+      background-color: var(--containersColor);
+      border-radius: 5px;
+      margin-right: 20px;
+      min-width: 300px; /* Ubah sesuai kebutuhan */
+      min-height: 200px; /* Ubah sesuai kebutuhan */
+      scroll-snap-align: start;
+    }
+    .slider-card h3 {
+      font-family: var(--font1);
+      font-size: 6vh;
+      padding-bottom: 2vh;
+    }
+    .slider-card p {
+      font-size: 4vh;
+      color: var(--textColor);
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider-card">
+      <h3>Project 1</h3>
+      <p>This is the content of Project 1. You can add any description, images, or other elements here.</p>
+    </div>
+    <div class="slider-card">
+      <h3>Project 2</h3>
+      <p>This is the content of Project 2. You can add any description, images, or other elements here.</p>
+    </div>
+    <div class="slider-card">
+      <h3>Project 3</h3>
+      <p>This is the content of Project 3. You can add any description, images, or other elements here.</p>
+    </div>
+    <!-- Tambahkan kartu-kartu lainnya di sini -->
+  </div>
+</body>
+</html>

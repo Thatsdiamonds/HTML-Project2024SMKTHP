@@ -1,0 +1,25 @@
+#typingSelect {
+    color: var(--typingAnimationColor);
+    position: relative;
+}
+#typingSelect::before {
+    content: "";
+    height: 4vh;
+    width: 0.4vh;
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    
+    background: var(--typingAnimationColor);
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+#typingSelect.stop-blinking::before {
+    animation: none;
+}
+@keyframes blink {
+    50% { opacity: 0 }
+}
+
+
+/* Dari internet */

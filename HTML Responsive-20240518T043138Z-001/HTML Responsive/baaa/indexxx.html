@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+        :root {
+            --typingAnimationColor: #fff;
+            --font1: Arial, sans-serif;
+            --font2: 'Times New Roman', serif;
+        }
+
+        #typingSelect {
+            color: var(--typingAnimationColor);
+            position: relative;
+        }
+        #typingSelect::before {
+            content: "";
+            height: 4vh;
+            width: 0.4vh;
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            background: var(--typingAnimationColor);
+            transform: translateY(-45%);
+            animation: blink 0.7s infinite;
+        }
+        #typingSelect.stop-blinking::before {
+            animation: none;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+        .banner {
+            position: relative;
+            height: 100vh;
+            z-index: 1;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+            z-index: -2;
+        }
+        .background.fade {
+            opacity: 0;
+        }
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: -1;
+        }
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+        .banner-content h1 {
+            font-size: 6vh;
+            margin-bottom: 10px;
+            font-family: var(--font2);
+        }
+        .banner-content h2 {
+            font-size: 4vh;
+            font-family: var(--font1);
+        }
+    </style>
+</head>
+<body>
+    <div id="banner" class="banner">
+        <div id="background1" class="background" style="background-image: url('f1.jpg');"></div>
+        <div id="background2" class="background" style="background-image: url('f2.jpg'); opacity: 0;"></div>
+        <div class="banner-content">
+            <h1>Best #1</h1>
+            <h2>In <span id="typingSelect"></span></h2>
+        </div>
+    </div>
+
+    <script>
+        const dynamicText = document.querySelector("#typingSelect");
+        const words = [
+            "Technologies Problem Solver.",
+            "Artificial Intelligence.",
+            "Network Defender.",
+            "Sell IOT;'s."
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        const typeEffect = () => {
+            const currentWord = words[wordIndex];
+            const currentChar = currentWord.substring(0, charIndex);
+            dynamicText.textContent = currentChar;
+            dynamicText.classList.add("stop-blinking");
+
+            if (!isDeleting && charIndex < currentWord.length) {
+                charIndex++;
+                setTimeout(typeEffect, 100);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(typeEffect, 60);
+            } else {
+                isDeleting = !isDeleting;
+                dynamicText.classList.remove("stop-blinking");
+                wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+                setTimeout(typeEffect, 500);
+            }
+        };
+
+        typeEffect();
+
+        const backgrounds = [
+            'url("f1.jpg")',
+            'url("f2.jpg")',
+            'url("f3.jpg")'
+        ];
+        let backgroundIndex = 0;
+
+        const changeBackground = () => {
+            const currentBackground = document.getElementById('background1');
+            const nextBackground = document.getElementById('background2');
+            currentBackground.style.backgroundImage = backgrounds[backgroundIndex];
+            nextBackground.style.opacity = 0;
+
+            setTimeout(() => {
+                backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
+                nextBackground.style.backgroundImage = backgrounds[backgroundIndex];
+                nextBackground.style.opacity = 1;
+            }, 1000); // Duration of the fade transition
+        };
+
+        setInterval(changeBackground, 5000); // Change background every 5 seconds
+    </script>
+</body>
+</html>

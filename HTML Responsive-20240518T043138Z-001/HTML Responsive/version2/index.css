@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bodyColor);
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--border-bgscrollColor);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: var(--border-scrollColor);
+    }
+}
+
+#title {
+    font-weight: 500;
+    width: 87%;
+    color: white;
+    text-align: center;
+    opacity: 80%;
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    pointer-events: none;
+}
+/* START HERE ================================ */
+
+header {
+    background-color: var(--header-color);
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    & .titleHeader h1 {
+        font-family: var(--font2);
+        font-weight: 800;
+        width: fit-content;
+        color: var(--primary-font-color);
+        text-transform: uppercase;
+        font-size: 2em;
+        cursor: pointer;
+        &::after {
+            content: " tech";
+            color: var(--containersColor);
+        }
+    }
+    & ul {
+        font-family: var(--font1);
+        width: fit-content;
+        list-style-type: none;
+        display: flex;
+        font-weight: 600;
+        font-size: 1.4em;
+        text-align: center;
+    }
+    & a {
+        color: #a5a5a5;
+        transition: 0.4s;
+        padding: 0.8vh;
+        margin: 0.4vh;
+        width: fit-content;
+        cursor: pointer;
+        text-align: center;
+        user-select: none;
+        display: inline-block;
+        text-decoration: none;
+        &:hover {
+            color: white;
+        }
+        &:not(li, svg) {
+            animation: slideInFromRight 0.6s ease-out forwards;
+        }
+    }
+}
+
+/* hhhhhhhhhhhhhhhhhhhhhhhhhhhh */
+
+.overlay-menu {
+    overflow-y: scroll;
+    border-left: 2px white solid;
+    padding: 4vh;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    right: -500px;
+    min-width: 40vh;
+    height: 100%;
+    background-color: #332f2f;
+    z-index: 9999;
+    transition: all 0.6s ease;
+    & ul {
+        list-style: none;
+        border: 1px white solid;
+        padding: 2vh;
+        margin-top: 4vh;
+        a {
+            display: flex;
+            flex-direction: column;
+            margin: 1vh;
+            padding: 1vh;
+            font-family: var(--font1);
+            color: #a5a5a5;
+            transition: 0.8s;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: none;
+            width: 90%;
+            text-align: left;
+            &:hover:not(#currentPage) {
+                color: white;
+                border-left: 1px solid white;
+                padding-left: 2vh;
+            }
+            &:focus:not(#currentPage) {
+                background: linear-gradient(to left, transparent 50%, gray 50%)
+                    right;
+                background-size: 200% 100%;
+            }
+        }
+    }
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #ffffff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #958a8a;
+    }
+}
+
+.overlay-menu.open {
+    right: 0;
+    opacity: 1;
+    svg {
+        margin-bottom: 2vh;
+    }
+}
+
+.menu-button {
+    background-color: var(--burgerMenuColo);
+    color: #fff;
+    margin-left: 2vh;
+    padding: 1vh 1vh 1vh 1vh;
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.6s ease;
+    &:hover {
+        background-color: var(--burgerMenuColoH);
+    }
+}
+.menu-button.hide {
+    opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+    }
+    .menu-button {
+        display: block;
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+    .overlay-menu {
+        display: block;
+        transition: all 0.3s ease;
+    }
+    header {
+        ul a {
+            display: none;
+        }
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fadeInAnimation 0.5s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

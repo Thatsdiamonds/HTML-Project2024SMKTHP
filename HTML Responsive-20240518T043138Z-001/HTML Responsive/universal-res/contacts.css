@@ -1,0 +1,78 @@
+.contacts {
+    padding: 4vh;
+    background-color: var(--containersColor);
+    border-radius: 5px;
+    margin: 12vh 6vh 12vh 6vh;
+    & h3 {
+        font-family: var(--font1);
+        font-size: 6vh;
+    }
+
+    .contact-list {
+        overflow-x: auto;
+        white-space: nowrap;
+        &::-webkit-scrollbar {
+            width: 16px;
+        }
+        &::-webkit-scrollbar-track {
+            background: var(--border-bgscrollColor);
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--border-scrollColor);
+        }
+    }
+}
+
+.contact-item {
+    padding: 2vh;
+    height: 20vh;
+    min-width: 40vh;
+    max-width: 60vh;
+    display: inline-block;
+    border: 2px solid var(--borderColor2);
+    border-radius: 6px;
+    margin: 4vh 0 4vh 0;
+    margin-left: 2vh;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:nth-child(n + 2) {
+        margin-top: 2vh;
+    }
+    & p {
+        font-family: var(--font2);
+        font-size: 2.6vh;
+    }
+    & h2 {
+        font-family: var(--font1);
+        font-size: 4vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-item {
+        height: 16vh;
+        min-width: 92%;
+        border: 2px solid var(--borderColor2);
+        border-radius: 6px;
+        margin: 2vh 2vh 2vh 0;
+        overflow: auto;
+        &:first-child {
+            margin-top: 4vh;
+        }
+        & p {
+            font-family: var(--font2);
+            font-size: 2vh;
+        }
+        & h2 {
+            font-family: var(--font1);
+            font-size: 3vh;
+        }
+    }
+    .contacts {
+        margin: 4vh 2vh 4vh 2vh;
+        .contact-list {
+            white-space: normal;
+        }
+    }
+}

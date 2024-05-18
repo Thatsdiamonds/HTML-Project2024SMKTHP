@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="apple-touch-icon.png" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicon-32x32.png" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicon-16x16.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="../universal-res/root.css" />
+        <link rel="stylesheet" href="../universal-res/contacts.css" />
+        <link rel="stylesheet" href="../universal-res/content.css" />
+        <link rel="stylesheet" href="../universal-res/typing.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+        <title>ELANG Tech</title>
+    </head>
+    <body onload="console.log('Site fully loaded.')">
+        <noscript><h1 style="color: red">Alert!</h1></noscript>
+        <noscript>Turn on JavaScript to continue.</noscript>
+        <header id="header">
+            <div onclick="location.reload();" class="titleHeader">
+                <h1>elang tech</h1>
+            </div>
+            <div class="atributHeader">
+                <ul>
+                    <a href="#about-us">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#our-team">Our Team</a>
+                    <svg
+                        class="menu-button"
+                        onclick="toggleMenu()"
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                </ul>
+            </div>
+        </header>
+
+        <div class="overlay-menu">
+            <svg
+                class="menu-button hide"
+                onclick="toggleMenu()"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#e8eaed">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+            <ul>
+                <a id="title">Sections</a>
+                <a href="#header">Header</a>
+                <a href="#banner">Banner</a>
+                <a href="#about-us">About us</a>
+                <a href="#services">Services</a>
+                <a href="#our-team">Our team</a>
+                <a href="#footer">Footer</a>
+            </ul>
+            <ul>
+                <a id="title">Language</a>
+                <a id="idButton">Indonesian</a>
+                <a id="enButton">English</a>
+            </ul>
+            <ul>
+                <a id="title">Homepages</a>
+                <a href="../version1/index.html">Version 1</a>
+                <a href="../version2/index.html">Version 2</a>
+            </ul>
+            <ul>
+                <a id="title">Tools</a>
+                <a onclick="javascript: window.location = '../index.html';"
+                    >Go to Parent File</a
+                >
+                <a onclick="window.location.reload(true);">Reload</a>
+                <a onclick="window.location.reload(true);">Force Hard Reload</a>
+            </ul>
+            <br /><br /><br />
+        </div>
+
+        <main>
+            <div id="banner" class="banner">
+                <div
+                    id="background1"
+                    class="background"
+                    style="
+                        background-image: url(&quot;../image-res/introimg.jpg&quot;);
+                    "></div>
+                <div
+                    id="background2"
+                    class="background"
+                    style="
+                        background-image: url(&quot;../image-res/ii2.jpg&quot;);
+                        opacity: 0;
+                    "></div>
+                <div class="banner-content">
+                    <h1>Best #1</h1>
+                    <h2>In <span id="typingSelect"></span></h2>
+                </div>
+            </div>
+
+            <div id="about-us" class="container1">
+                <h3>Introduction</h3>
+                <p>
+                    Welcome to our website! Here at ELANG TECH, we pride
+                    ourselves on being at the forefront of open-source
+                    technology solutions. Our platform serves as a testament to
+                    our unwavering commitment to innovation, collaboration, and
+                    knowledge sharing.
+                </p>
+                <p>
+                    Within these digital corridors, professionals from diverse
+                    backgrounds converge to unravel the complexities of
+                    open-source technologies. Whether you're a seasoned
+                    developer, an aspiring enthusiast, or a curious explorer,
+                    our community-driven platform offers a wealth of resources
+                    to fuel your journey.
+                </p>
+                <p>
+                    Driven by a passion for excellence and a dedication to our
+                    users, we strive to create an inclusive environment where
+                    every voice is heard, every question finds an answer, and
+                    every problem is met with a collaborative spirit. Join us as
+                    we embark on a journey of discovery, where possibilities are
+                    limitless, and the future of open-source technology is
+                    shaped by the collective efforts of our community.
+                </p>
+                <br /><br /><br />
+                <h3>Our Goals</h3>
+
+                <p>
+                    Our goal at ELANG TECH is to foster a vibrant and inclusive
+                    community dedicated to advancing open-source technology. We
+                    aim to provide a platform where professionals, enthusiasts,
+                    and learners can come together to explore, innovate, and
+                    collaborate. Through our commitment to excellence and user
+                    satisfaction, we aspire to empower individuals to harness
+                    the full potential of open-source solutions. Join us as we
+                    strive to create a future where knowledge is freely shared,
+                    boundaries are transcended, and technology serves as a force
+                    for positive change.
+                </p>
+                <br /><br /><br />
+                <h3>Our Partners</h3>
+
+                <div class="image-container">
+                    <div class="image-box">
+                        <img src="../image-res/partner1.jpg" alt="Partner 1" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner2.jpg" alt="Partner 2" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner3.jpg" alt="Partner 3" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner4.jpg" alt="Partner 4" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner5.jpg" alt="Partner 5" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner6.jpg" alt="Partner 6" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner7.jpg" alt="Partner 7" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner8.jpg" alt="Partner 8" />
+                    </div>
+                    <div class="image-box">
+                        <img src="../image-res/partner9.jpg" alt="Partner 9" />
+                    </div>
+                    <div class="image-box">
+                        <img
+                            src="../image-res/partner10.jpg"
+                            alt="Partner 10" />
+                    </div>
+                </div>
+            </div>
+            <section id="services" class="our-services">
+                <h2>Our Services</h2>
+                <div class="services-container">
+                    <div class="service-box">
+                        <h3>Professional Consultation</h3>
+                        <p>
+                            Unlock insights from seasoned professionals who
+                            offer personalized guidance and consultation
+                            tailored to your unique needs and challenges.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <h3>Community Collaboration</h3>
+                        <p>
+                            Engage in collaborative projects and discussions
+                            within our vibrant community, where ideas flourish,
+                            solutions emerge, and connections thrive.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <h3>Technical Support</h3>
+                        <p>
+                            Access timely technical support and troubleshooting
+                            assistance from our dedicated team of experts,
+                            ensuring seamless navigation through technological
+                            complexities.
+                        </p>
+                    </div>
+                    <div class="service-box">
+                        <h3>Knowledge Sharing</h3>
+                        <p>
+                            Participate in knowledge-sharing initiatives,
+                            workshops, and webinars curated to broaden your
+                            understanding and proficiency in open-source
+                            technologies.
+                        </p>
+                    </div>
+                </div>
+                <br /><br /><br />
+                <h2>Other Services</h2>
+                <p>
+                    In addition to our core services, we also offer specialized
+                    solutions to further meet your needs. Our team of experts is
+                    dedicated to providing you with innovative and tailored
+                    solutions that drive success for your business. Whether you
+                    require data analysis, web development, cloud computing, or
+                    digital marketing services, we have the expertise to help
+                    you achieve your goals.
+                </p>
+            </section>
+            <div id="our-team" class="contacts">
+                <h3>Our Team</h3>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <h2>Abdul Wachid</h2>
+                        <p>Class : <span>X TJKT 2</span></p>
+                        <p>ID Number : <span>01</span></p>
+                        <p>Role : <span>Presenter</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <h2>Andika Andromeda</h2>
+                        <p>Class : <span>X TJKT 2</span></p>
+                        <p>ID Number : <span>05</span></p>
+                        <p>Role : <span>Group leader</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <h2>Aulia Setiyaningrum</h2>
+                        <p>Class : <span>X TJKT 2</span></p>
+                        <p>ID Number : <span>08</span></p>
+                        <p>Role : <span>Presenter</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <h2>Bramasta Marga Pangukuh</h2>
+                        <p>Class : <span>X TJKT 2</span></p>
+                        <p>ID Number : <span>01</span></p>
+                        <p>Role : <span>Group leader's assistant</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <h2>Kirana Alfia Ummah</h2>
+                        <p>Class : <span>X TJKT 2</span></p>
+                        <p>ID Number : <span>20</span></p>
+                        <p>Role : <span>Presenter</span></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer-content">
+                <h1>ELANG TECH</h1>
+                <p>Landing Page untuk sebuah perusahaan.</p>
+                <p>Pembuatan/perencanaan mulai dari; Rabu, 8 Mei 2024.</p>
+                <p>Proyek selesai pada; XXXXXXX</p>
+            </div>
+        </footer>
+
+        <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+        <script>
+            addBackToTop({
+                diameter: 56,
+                backgroundColor: "rgb(255, 82, 82)",
+                textColor: "#fff"
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+
+        <script src="../universal-res/typing.js"></script>
+        <script src="../universal-res/changeBG.js"></script>
+        <script>
+            var scroll = new SmoothScroll('a[href*="#"]');
+
+            function toggleMenu() {
+                var overlayMenu = document.querySelector(".overlay-menu");
+                overlayMenu.classList.toggle("open");
+
+                var menuButtons = document.querySelectorAll(".menu-button");
+                menuButtons.forEach(function (button) {
+                    button.classList.toggle("hide");
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                function closeMenuOnSmallScreen() {
+                    const menuOverlay = document.querySelector(".overlay-menu");
+                    const links = document.querySelectorAll(".overlay-menu a");
+
+                    links.forEach((link) => {
+                        link.addEventListener("click", () => {
+                            const screenWidth = window.innerWidth;
+                            if (screenWidth < 768) {
+                                toggleMenu();
+                            }
+                        });
+                    });
+                }
+
+                closeMenuOnSmallScreen();
+            });
+
+            const backgrounds = [
+                'url("../image-res/introimg.jpg")',
+                'url("../image-res/ii2.jpg")',
+                'url("../image-res/ii3.jpg")'
+            ];
+        </script>
+    </body>
+</html>

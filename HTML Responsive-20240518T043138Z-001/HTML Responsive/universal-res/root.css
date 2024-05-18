@@ -1,0 +1,18 @@
+:root {
+    --font1: "Raleway", sans-serif; /* GOOGLE FONTS API*/
+    --font2: "Montserrat", sans-serif; /* GOOGLE FONTS API*/
+    --header-color: #333333;
+    --body-color: #333333;
+    --primary-font-color: #ffffff;
+    --colorMain: #303030;
+    --bodyColor: #383d3e;
+    --fotoBanner: url("../image-res/introimg.jpg"); /* IMAGE IMPORT LOCAL*/
+    --containersColor: #a2c6f4;
+    --shadowColorServices: rgba(255, 255, 255, 0.75);
+    --borderColor2: #474ded;
+    --border-scrollColor: #00a6ff;
+    --border-bgscrollColor: #c7cbfcab;
+    --typingAnimationColor: #4fe83b;
+    --burgerMenuColo: rgba(74, 69, 69, 0.72);
+    --burgerMenuColoH: rgba(105, 96, 96, 0.72);
+}

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bodyColor);
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+    &::-webkit-scrollbar-track {
+        background: var(--border-bgscrollColor);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: var(--border-scrollColor);
+    }
+}
+
+/* START HERE ================================ */
+
+header {
+    background-color: var(--header-color);
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    & .titleHeader h1 {
+        font-family: var(--font2);
+        font-weight: 800;
+        width: fit-content;
+        color: var(--primary-font-color);
+        text-transform: uppercase;
+        font-size: 2em;
+    }
+    & ul {
+        font-family: var(--font1);
+        width: fit-content;
+        list-style-type: none;
+        display: flex;
+        font-weight: 600;
+        font-size: 1.4em;
+        & li,
+        a {
+            color: #a5a5a5;
+            transition: 0.4s;
+            width: fit-content;
+            cursor: pointer;
+            text-align: center;
+            user-select: none;
+            display: inline-block;
+            text-decoration: none;
+            animation: slideInFromRight 0.6s ease-out forwards;
+            &:nth-child(n + 2) {
+                margin-left: 2vw;
+            }
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}
+
+/* STYLESHEET KONTEN */
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        & a {
+            font-size: 0.6em;
+            border: 1px solid white;
+            padding: 0.4vh 1em 0.4vh 1em;
+            border-radius: 2px;
+            margin-top: 1vh;
+            &:nth-child(n + 2) {
+                margin-left: 4vw;
+            }
+        }
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
